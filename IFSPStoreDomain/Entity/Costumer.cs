@@ -1,14 +1,13 @@
 ﻿using IFSPStoreDomain.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IFSPStoreDomain.Entity
 {
     public class Costumer : BaseEntity<int>
     {
+        public Costumer()
+        {
+            
+        }
         public Costumer(int id, string name, string address, string document, string district, City city) :base(id)
         {
             Name=name;

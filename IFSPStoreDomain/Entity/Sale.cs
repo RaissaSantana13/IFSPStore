@@ -1,37 +1,47 @@
 ﻿using IFSPStoreDomain.Base;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace IFSPStoreDomain.Entity
 {
     public class Sale : BaseEntity<int>
     {
-        public Sale(int id, DateTime date, float totalAmount):base(id)
+        public Sale()
+        {
+            
+        }
+        public Sale(int id, DateTime date, decimal saleTotal, User salesman, Costumer costumer) : base(id)
         {
             Date = date;
-            TotalAmount = totalAmount;
+            SaleTotal = saleTotal;
+            Salesman = salesman;
+            Costumer = costumer;
+            SaleItems =new List<SaleItem>();
         }
 
         public DateTime Date { get; set; }
-        public float TotalAmount { get; set; }
+        public decimal SaleTotal { get; set; }
+        public User Salesman { get; set; }
+        public Costumer Costumer { get; set; }
+        public List<SaleItem> SaleItems { get; set; }
     }
 
-    public class ItemSale : BaseEntity<int>
+    public class SaleItem : BaseEntity<int>
     {
-        public ItemSale(int id, int quantity, float unityPrice, float totalAmount) : base(id)
+        public SaleItem()
         {
-            TotalAmount = totalAmount;
-            Quantity = quantity;
-            UnityPrice = unityPrice;
+            
         }
-
-        public float TotalAmount { get; set; }
-        public int Quantity { get; set; }
-        public float UnityPrice { get; set; }
+        public SaleItem(int id, decimal quantity, decimal unitPrice, decimal totalPrice, Sale sale, Product product) : base(id)
+        {
+            Sale = sale;
+            Product = product;
+            TotalPrice = totalPrice;
+            Quantity = quantity;
+            UnitPrice = unitPrice;
+        }
+        public Sale Sale { get; set; }
+        public Product Product { get; set; }
+        public decimal TotalPrice { get; set; }
+        public decimal Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
     }
 
 }

@@ -1,32 +1,32 @@
 ﻿using IFSPStoreDomain.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace IFSPStoreDomain.Entity
 {
     public class User : BaseEntity<int>
     {
-        public User(int id, string name, string password, string login, string email, DateTime registrationDate, DateTime loginDate, bool actve) : base(id)
+        public User()
+        {
+            
+        }
+        public User(int id, string name, string password, string login, string email, DateTime registerDate, DateTime loginDate, bool isActive) : base(id)
         {
             Name = name;
             Password = password;
             Login = login;
             Email = email;
-            RegistrationDate = registrationDate;
+            RegisterDate = registerDate;
             LoginDate = loginDate;
-            Active = actve; 
+            IsActive = isActive; 
         }
 
         public string Name { get; set; }
         public string Password { get; set; }
         public string Login { get; set; }
         public string Email { get; set; }
-        public DateTime RegistrationDate { get; set; }
+        public DateTime RegisterDate { get; set; }
         public DateTime LoginDate { get; set; }
-        public bool Active { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }
