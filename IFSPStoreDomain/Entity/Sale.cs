@@ -7,16 +7,16 @@ namespace IFSPStoreDomain.Entity
         {
             
         }
-        public Sale(int id, DateTime date, decimal saleTotal, User salesman, Costumer costumer) : base(id)
+        public Sale(int id, DateTime saleDate, decimal saleTotal, User salesman, Costumer costumer) : base(id)
         {
-            Date = date;
+            SaleDate = saleDate;
             SaleTotal = saleTotal;
             Salesman = salesman;
             Costumer = costumer;
             SaleItems =new List<SaleItem>();
         }
 
-        public DateTime Date { get; set; }
+        public DateTime SaleDate { get; set; }
         public decimal SaleTotal { get; set; }
         public User Salesman { get; set; }
         public Costumer Costumer { get; set; }

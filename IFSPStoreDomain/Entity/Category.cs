@@ -1,4 +1,5 @@
 ﻿using IFSPStoreDomain.Base;
+using System.Globalization;
 
 namespace IFSPStoreDomain.Entity
 {
@@ -8,12 +9,14 @@ namespace IFSPStoreDomain.Entity
         {
             
         }
-        public Category(int id, string name):base(id) 
+        public Category(int id, string name, string description) :base(id) 
         {
-            Name = name; 
+            Name = name;
+            Description = description;
         }
         
         public string Name { get; set; }   
+        public string Description { get; set; }
         
     }
 }

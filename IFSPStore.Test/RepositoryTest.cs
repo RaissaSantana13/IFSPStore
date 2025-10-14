@@ -13,16 +13,17 @@ namespace IFSPStore.Test
             using (var context = new IFSPStoreContext())
             {
                 Console.WriteLine("Conected!");
-                var category1 = new Category(1, "Carnes");
-                var category2 = new Category(2, "Bebidas"); 
-                var category3 = new Category(3, "Doces");
+                 var category1 = new Category(1, "Carnes", "");
+                 var category2 = new Category(2, "Bebidas", ""); 
+                 var category3 = new Category(3, "Doces", "");
 
-                context.Categories.Add(category1);
-                context.Categories.Add(category2);
-                context.Categories.Add(category3);
+                 context.Categories.Add(category1);
+                 context.Categories.Add(category2);
+                 context.Categories.Add(category3);
 
-                context.SaveChanges();
-                Console.WriteLine("Insert Done!");
+                 context.SaveChanges();
+                 Console.WriteLine("Insert Done!");
+               
             }
 
             using (var context = new IFSPStoreContext())

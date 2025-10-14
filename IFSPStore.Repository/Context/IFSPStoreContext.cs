@@ -1,4 +1,5 @@
-﻿using IFSPStoreDomain.Entity;
+﻿using IFSPStore.Repository.Mapping;
+using IFSPStoreDomain.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace IFSPStore.Repository.Context
@@ -7,7 +8,7 @@ namespace IFSPStore.Repository.Context
     {
         public IFSPStoreContext() : base()
         { 
-            Database.EnsureCreated(); //Create DataBase
+            //Database.EnsureCreated(); //Create DataBase
         }   
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -21,5 +22,17 @@ namespace IFSPStore.Repository.Context
         public DbSet<Costumer> Costumers { get; set; }
         public DbSet<Sale> Sales{ get; set; }
         public DbSet<SaleItem> SaleItems{ get; set; }
-}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Category>(new CategoryMap().Configure);
+            modelBuilder.Entity<City>(new CityMap().Configure);
+            modelBuilder.Entity<Costumer>(new CostumerMap().Configure);
+            modelBuilder.Entity<Product>(new ProductMap().Configure);
+            modelBuilder.Entity<Sale>(new SaleMap().Configure);
+            modelBuilder.Entity<SaleItem>(new SaleItemMap().Configure);
+            modelBuilder.Entity<User>(new UserMap().Configure);
+        }
+    }
 }
