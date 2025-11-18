@@ -1,4 +1,5 @@
 ﻿using IFSPStore.app.Base;
+using IFSPStore.app.ViewModel;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validatorrs;
@@ -8,7 +9,7 @@ namespace IFSPStore.app.Register
     public partial class CategoryForm : BaseForm
     {
         private IBaseService<Category> _categoryService;
-        private List<Category> categories;
+        private List<CategoryViewModel> categories;
         public CategoryForm(IBaseService<Category> categoryService)
         {
             _categoryService = categoryService;
@@ -59,7 +60,7 @@ namespace IFSPStore.app.Register
 
         protected override void PopulateGrid()
         {
-           categories= _categoryService.Get<Category>().ToList();
+           categories= _categoryService.Get<CategoryViewModel>().ToList();
            dataGridViewList.DataSource = categories;
            dataGridViewList.Columns["Name"].AutoSizeMode=DataGridViewAutoSizeColumnMode.Fill;
         }

@@ -18,14 +18,29 @@ namespace IFSPStore.app
             ShowForm<CategoryForm>();
         }
 
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowForm<UserForm>();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(e.CloseReason == CloseReason.ApplicationExitCall)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void ShowForm<TFormulario>() where TFormulario : Form
         {
-            var cad= ConfigureDI.serviceProvider!.GetService<TFormulario>();
-            if (cad!=null && !cad.IsDisposed)
+            var cad = ConfigureDI.serviceProvider!.GetService<TFormulario>();
+            if (cad != null && !cad.IsDisposed)
             {
                 cad.MdiParent = this;
                 cad.Show();
             }
         }
+
+
     }
 }

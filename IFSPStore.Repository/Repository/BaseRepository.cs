@@ -31,6 +31,7 @@ namespace IFSPStore.Repository.Repository
 
         public void Update(TEntity obj)
         {
+            _mysSqlContext.Entry(obj).State = EntityState.Modified;
             _mysSqlContext.SaveChanges();
         }
         public void Delete(object id)
