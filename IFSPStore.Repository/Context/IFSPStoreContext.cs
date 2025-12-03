@@ -13,7 +13,7 @@ namespace IFSPStore.Repository.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=IFSPStore;user=root;password=");
+            optionsBuilder.UseMySQL("server=localhost;database=IFSPStore;user=root;password=12345");
         }
 
         public DbSet<City> Cities { get; set; }

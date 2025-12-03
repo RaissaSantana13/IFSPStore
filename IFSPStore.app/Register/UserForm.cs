@@ -78,14 +78,14 @@ namespace IFSPStore.app.Register
             txtName.Text = record?.Cells["Name"].Value.ToString();
             txtEmail.Text = record?.Cells["Email"].Value.ToString();
             txtLogin.Text = record?.Cells["Login"].Value.ToString();
-            txtPassword.Text = record?.Cells["Senha"].Value.ToString();
-            chkActive.Checked = (bool)(record?.Cells["Ativo"].Value ?? false);
+            txtPassword.Text = record?.Cells["Password"].Value.ToString();
+            chkActive.Checked = (bool)(record?.Cells["Active"].Value ?? false);
 
-            txtRegistrationDate.Text = DateTime.TryParse(record?.Cells["DataCadastro"].Value.ToString(), out var dataC)
+            txtRegistrationDate.Text = DateTime.TryParse(record?.Cells["RegistrationDate"].Value.ToString(), out var dataC)
                 ? dataC.ToString("g")
                 : "";
 
-            txtLoginDate.Text = DateTime.TryParse(record?.Cells["DataLogin"].Value.ToString(), out var dataL)
+            txtLoginDate.Text = DateTime.TryParse(record?.Cells["LoginDate"].Value.ToString(), out var dataL)
                 ? dataL.ToString("g")
                 : "";
         }

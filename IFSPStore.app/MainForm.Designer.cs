@@ -124,7 +124,9 @@ namespace IFSPStore.app
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "IFSP Store";
+            WindowState = FormWindowState.Maximized;
             FormClosing += MainForm_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
