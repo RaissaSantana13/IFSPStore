@@ -45,11 +45,13 @@ namespace IFSPStore.app.Infra
             #region Service
             services.AddScoped<IBaseService<Category>, BaseService<Category>>();
             services.AddScoped<IBaseService<User>, BaseService<User>>();
+            services.AddScoped<IBaseService<City>, BaseService<City>>();
             #endregion
 
             #region Forms
             services.AddScoped<CategoryForm, CategoryForm>();
             services.AddScoped<UserForm, UserForm>();
+            services.AddScoped<CityForm, CityForm>();
             #endregion
 
 
@@ -57,6 +59,7 @@ namespace IFSPStore.app.Infra
                 new MapperConfiguration(
                     config => {
                         config.CreateMap<User, UserViewModel>();
+                        config.CreateMap<City, CityViewModel>();
                         config.CreateMap<Category, CategoryViewModel>(); 
                     },
                     NullLoggerFactory.Instance).CreateMapper()

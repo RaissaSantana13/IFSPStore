@@ -62,39 +62,40 @@ namespace IFSPStore.app
             // userToolStripMenuItem
             // 
             userToolStripMenuItem.Name = "userToolStripMenuItem";
-            userToolStripMenuItem.Size = new Size(126, 22);
+            userToolStripMenuItem.Size = new Size(180, 22);
             userToolStripMenuItem.Text = "User";
             userToolStripMenuItem.Click += userToolStripMenuItem_Click;
             // 
             // categoryToolStripMenuItem
             // 
             categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            categoryToolStripMenuItem.Size = new Size(126, 22);
+            categoryToolStripMenuItem.Size = new Size(180, 22);
             categoryToolStripMenuItem.Text = "Category";
             categoryToolStripMenuItem.Click += categoryToolStripMenuItem_Click;
             // 
             // productToolStripMenuItem
             // 
             productToolStripMenuItem.Name = "productToolStripMenuItem";
-            productToolStripMenuItem.Size = new Size(126, 22);
+            productToolStripMenuItem.Size = new Size(180, 22);
             productToolStripMenuItem.Text = "Product";
             // 
             // cityToolStripMenuItem
             // 
             cityToolStripMenuItem.Name = "cityToolStripMenuItem";
-            cityToolStripMenuItem.Size = new Size(126, 22);
+            cityToolStripMenuItem.Size = new Size(180, 22);
             cityToolStripMenuItem.Text = "City";
+            cityToolStripMenuItem.Click += cityToolStripMenuItem_Click;
             // 
             // customerToolStripMenuItem
             // 
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new Size(126, 22);
+            customerToolStripMenuItem.Size = new Size(180, 22);
             customerToolStripMenuItem.Text = "Customer";
             // 
             // saleToolStripMenuItem
             // 
             saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            saleToolStripMenuItem.Size = new Size(126, 22);
+            saleToolStripMenuItem.Size = new Size(180, 22);
             saleToolStripMenuItem.Text = "Sale";
             // 
             // reportToolStripMenuItem

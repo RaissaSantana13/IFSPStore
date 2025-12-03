@@ -24,6 +24,24 @@ namespace IFSPStore.app.Register
             user.Login = txtLogin.Text;
             user.Password = txtPassword.Text;
             user.Active = chkActive.Checked;
+
+            if (DateTime.TryParse(txtRegistrationDate.Text, out var dateRegistration))
+            {
+                user.RegistrationDate = dateRegistration;
+            }
+            else
+            {
+                user.RegistrationDate = DateTime.Now;
+            }
+
+            if (DateTime.TryParse(txtLoginDate.Text, out var dateLogin))
+            {
+                user.LoginDate = dateLogin;
+            }
+            else
+            {
+                user.LoginDate = DateTime.Now;
+            }
         }
 
         protected override void Save()

@@ -25,10 +25,15 @@ namespace IFSPStore.app
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(e.CloseReason == CloseReason.ApplicationExitCall)
+            if (e.CloseReason == CloseReason.ApplicationExitCall)
             {
                 e.Cancel = true;
             }
+        }
+
+        private void cityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowForm<CityForm>();
         }
 
         private void ShowForm<TFormulario>() where TFormulario : Form
